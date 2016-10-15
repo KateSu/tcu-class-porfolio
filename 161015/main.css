@@ -1,0 +1,25 @@
+a {
+	color: #000;
+	text-decoration: none;
+}
+
+ul {
+	list-style-type: none;
+	padding-left: 0;
+}
+
+
+
+/*  custom */
+
+.number-list > li {
+	counter-increment: numbers;
+	list-style-type: none;
+}
+
+.number-list > li:before {
+	content: "(" counter(numbers, cjk-ideographic) ")";
+}
+
+/* container */
+
