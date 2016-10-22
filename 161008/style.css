@@ -1,0 +1,30 @@
+body {
+	font-family: sans-serif;
+}
+
+
+
+/* head */
+.title {
+	font-size: 50px;
+	background-color: #33bebe;
+	color: #fff;
+	text-transform: uppercase;
+	padding: 40px 50px 5px 15px;
+}
+
+
+/* content */
+#content {
+	padding-top: 60px;
+}
+
+#content img {
+	float: left;
+	padding-right: 30px;
+}
+
+#content description {
+	float: right;
+	 
+}

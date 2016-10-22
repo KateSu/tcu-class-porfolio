@@ -16,3 +16,8 @@ ol, ul {
 .number-list > li::before {
 	content : "(" counter(numbers , cjk-ideographic) ")";
 }
+
+
+
+/* content */
+

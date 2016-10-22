@@ -27,5 +27,7 @@ Host github
 ssh -T git@github.com
 ```
 http://finfin.github.io/2015/01/17/multiple-git-accounts.html
-  
+
 http://stackoverflow.com/questions/3778042/github-error-cloning-my-private-repository
+
+http://stackoverflow.com/questions/2432764/change-the-uri-url-for-a-remote-git-repository/2432799#2432799
