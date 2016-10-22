@@ -27,3 +27,5 @@ Host github
 ssh -T git@github.com
 ```
 http://finfin.github.io/2015/01/17/multiple-git-accounts.html
+  
+http://stackoverflow.com/questions/3778042/github-error-cloning-my-private-repository
