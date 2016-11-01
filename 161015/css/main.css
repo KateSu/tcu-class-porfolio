@@ -7,6 +7,9 @@ ol, ul {
 	padding-left: 0;
 }
 
+body {
+	margin:  0;
+}
 
 /* custom classes */
 .number-list > li {
@@ -21,3 +24,12 @@ ol, ul {
 
 /* content */
 
+.food-therapy {
+}
+
+.test {
+	width: ;
+	border: 2px solid #526341;
+	padding : 15px 15px 15px 70px;
+	margin: 50px auto;
+}
