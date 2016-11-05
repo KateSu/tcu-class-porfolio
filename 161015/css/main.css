@@ -23,6 +23,11 @@ body {
 
 
 /* content */
+.container {
+	width: 1170px;
+	margin: 0 auto;
+}
+
 
 .food-therapy {
 }
