@@ -1,0 +1,50 @@
+a {
+    text-decoration: none;
+}
+
+ol,
+ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+body {
+    margin: 0;
+    font-family: microsoft jhenghei;
+}
+
+
+/* custom classes */
+
+.number-list {
+    > li {
+        counter-increment: numbers;
+        ::before {
+            content: "(" counter(numbers, cjk-ideographic) ")";
+        }
+    }
+}
+
+.row {
+    display: table;
+    clear: both;
+    content: "";
+    margin: 0 -15px;
+}
+
+.col-2, .col-3, .col-4, .col-6, .col-8, .col-9, .col-10, .col-12 {
+    float: left;
+    padding: 15px;
+}
+
+
+/* content */
+
+.container {
+    width: 1170px;
+    margin: 0 auto;
+}
+
+.acupoint-therapy {
+
+}
