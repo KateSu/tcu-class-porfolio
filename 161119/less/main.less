@@ -9,9 +9,18 @@ body {
     font-family: 微軟正黑體;
 }
 
+ol,
+ul {
+    list-style-type: none;
+    padding-left: 0;
+}
 
-/* custom classes */
+h3 {
+    font-size: 25px;
+    padding-bottom: 10px;
+}
 
+// custom classes
 .container {
     padding-right: 15px;
     padding-left: 15px;
@@ -44,6 +53,15 @@ body {
     content: " ";
 }
 
+.number-list {
+    li {
+        counter-increment: numbers;
+        &::before {
+            content: "(" counter(numbers, cjk-ideographic) ")";
+        }
+    }
+}
+
 #wrapper {
     background: #ede4cd;
 }
@@ -59,16 +77,18 @@ header {
     h1 {
         position: relative;
         top: 250px;
-        transform: translateY(50%);
         text-align: center;
-        font-size: 50px;
+        font-size: 65px;
         font-weight: 800;
         letter-spacing: 5px;
     }
 }
 
 nav {
-    height: 80px;
+    height: 60px;
+    .container {
+        background-color: #222222;
+    }
     ul {
         list-style-type: none;
     }
@@ -76,18 +96,38 @@ nav {
         float: left;
         a {
             display: block;
-            text-decoration: none;
-            line-height: 80px;
             padding-right: 20px;
             padding-left: 20px;
+            text-decoration: none;
+            line-height: 60px;
+            color: #ffffff;
+            &[href]:hover {
+                background-color: #3eb370;
+            }
         }
+    }
+    .active {
+        background-color: #028760;
     }
 }
 
 article {
-    .k-section {
+    p,
+    ul,
+    ol {
+        padding: 10px 0px;
+    }
+    p,
+    li {
+        font-size: 17px;
+        line-height: 1.7em;
+    }
+    .k-article-content {
         background: #f3f3f2;
-        height: 350px;
+        padding: 15px 0;
+        div {
+            padding: 10px 0;
+        }
     }
 }
 

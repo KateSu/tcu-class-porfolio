@@ -17,9 +17,9 @@ body {
 /* custom classes */
 
 .number-list {
-    > li {
+    li {
         counter-increment: numbers;
-        ::before {
+        &::before {
             content: "(" counter(numbers, cjk-ideographic) ")";
         }
     }
@@ -32,7 +32,14 @@ body {
     margin: 0 -15px;
 }
 
-.col-2, .col-3, .col-4, .col-6, .col-8, .col-9, .col-10, .col-12 {
+.col-2,
+.col-3,
+.col-4,
+.col-6,
+.col-8,
+.col-9,
+.col-10,
+.col-12 {
     float: left;
     padding: 15px;
 }
@@ -45,6 +52,4 @@ body {
     margin: 0 auto;
 }
 
-.acupoint-therapy {
-
-}
+.acupoint-therapy {}

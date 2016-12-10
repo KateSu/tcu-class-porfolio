@@ -11,10 +11,10 @@ body {
   font-family: microsoft jhenghei;
 }
 /* custom classes */
-.number-list > li {
+.number-list li {
   counter-increment: numbers;
 }
-.number-list > li ::before {
+.number-list li::before {
   content: "(" counter(numbers, cjk-ideographic) ")";
 }
 .row {
