@@ -1,0 +1,435 @@
+<?php
+if (isset($_GET["update"])){
+    echo "更新";
+    
+}else{
+
+$cid=$_GET['id'];
+
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "db0311";
+
+
+
+// Create connection
+$conn = mysqli_connect($servername, $username, $password, $dbname);
+
+// Check connection
+if (!$conn) {
+    die("連線失敗: " . mysqli_connect_error());
+}
+//echo "連線成功<br>";
+
+mysql_query("SET NAMES utf8");
+
+$sql = "SELECT * FROM students0311 where cid='".$cid."'";
+$result = mysqli_query($conn, $sql);
+
+//if (mysqli_num_rows($result) > 0) {
+    // output data of each row
+   $row = mysqli_fetch_assoc($result);
+include("bootstrap01.php");
+?>       
+  <h1>修改作業</h1>
+<form>
+座號：<?php echo $row["cID"]; ?><br>    
+姓名：<input type="text" name="cname" value="<?php echo $row["cName"]; ?>"><br>
+性別：<input type="text" name="csex" value="<?php echo $row["cSex"]; ?>"><br>
+生日：<input type="text" name="cbirthday" value="<?php echo $row["cBirthday"]; ?>"><br>
+郵件：<input type="text" name="cmail" value="<?php echo $row["cEmail"]; ?>"><br>
+電話：<input type="text" name="ctel" value="<?php echo $row["cPhone"]; ?>"><br>
+地址：<input type="text" name="caddr" value="<?php echo $row["cAddr"]; ?>"><br>
+
+<input type="submit" name="update" value="更新">
+<input type="reset">    
+</form>     
+    
+<?php
+include("bootstrap02.php");
+}
+?>
+
+============================================================================================
+<?php
+if (isset($_GET["update"])){
+    echo "更新";
+    
+}else{
+
+$cid=$_GET['id'];
+
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "db0311";
+
+
+
+// Create connection
+$conn = mysqli_connect($servername, $username, $password, $dbname);
+
+// Check connection
+if (!$conn) {
+    die("連線失敗: " . mysqli_connect_error());
+}
+//echo "連線成功<br>";
+
+mysql_query("SET NAMES utf8");
+
+$sql = "SELECT * FROM students0311 where cid='".$cid."'";
+$result = mysqli_query($conn, $sql);
+
+//if (mysqli_num_rows($result) > 0) {
+    // output data of each row
+   $row = mysqli_fetch_assoc($result);
+include("bootstrap01.php");
+?>       
+  <h1>修改作業</h1>
+<form>
+座號：<?php echo $row["cID"]; ?><input type="hidden" name="cid" value="<?php echo $row["cID"]; ?>"><br>
+姓名：<input type="text" name="cname" value="<?php echo $row["cName"]; ?>"><br>
+性別：<input type="text" name="csex" value="<?php echo $row["cSex"]; ?>"><br>
+生日：<input type="text" name="cbirthday" value="<?php echo $row["cBirthday"]; ?>"><br>
+郵件：<input type="text" name="cmail" value="<?php echo $row["cEmail"]; ?>"><br>
+電話：<input type="text" name="ctel" value="<?php echo $row["cPhone"]; ?>"><br>
+地址：<input type="text" name="caddr" value="<?php echo $row["cAddr"]; ?>"><br>
+
+<input type="submit" name="update" value="更新">
+<input type="reset">    
+</form>     
+    
+<?php
+include("bootstrap02.php");
+}
+?>
+
+========================================================================================
+conndb.php
+========================================================================================
+<?php
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "db0311";
+
+
+
+// Create connection
+$conn = mysqli_connect($servername, $username, $password, $dbname);
+
+// Check connection
+if (!$conn) {
+    die("連線失敗: " . mysqli_connect_error());
+}
+//echo "連線成功<br>";
+
+mysql_query("SET NAMES utf8");
+?>
+
+=======================================================================================
+<?php
+include("conndb.php");
+
+if (isset($_GET["update"])){
+    echo "更新";
+    $cid=$_GET["cid"];
+    $cname=$_GET["cname"];
+    $csex=$_GET["csex"];
+    $ccbirthday=$_GET["cbirthday"];
+    $cmail=$_GET["cmail"];
+    $ctel=$_GET["ctel"];
+    $caddr=$_GET["caddr"];
+    
+}else{
+
+$cid=$_GET['id'];
+
+
+
+$sql = "SELECT * FROM students0311 where cid='".$cid."'";
+$result = mysqli_query($conn, $sql);
+
+//if (mysqli_num_rows($result) > 0) {
+    // output data of each row
+   $row = mysqli_fetch_assoc($result);
+include("bootstrap01.php");
+?>       
+  <h1>修改作業</h1>
+<form>
+座號：<?php echo $row["cID"]; ?><input type="hidden" name="cid" value="<?php echo $row["cID"]; ?>"><br>
+姓名：<input type="text" name="cname" value="<?php echo $row["cName"]; ?>"><br>
+性別：<input type="text" name="csex" value="<?php echo $row["cSex"]; ?>"><br>
+生日：<input type="text" name="cbirthday" value="<?php echo $row["cBirthday"]; ?>"><br>
+郵件：<input type="text" name="cmail" value="<?php echo $row["cEmail"]; ?>"><br>
+電話：<input type="text" name="ctel" value="<?php echo $row["cPhone"]; ?>"><br>
+地址：<input type="text" name="caddr" value="<?php echo $row["cAddr"]; ?>"><br>
+
+<input type="submit" name="update" value="更新">
+<input type="reset">    
+</form>     
+    
+<?php
+include("bootstrap02.php");
+}
+?>
+================================================================================
+
+<?php
+include("conndb.php");
+
+if (isset($_GET["update"])){
+    echo "更新";
+    $cid=$_GET["cid"];
+    $cname=$_GET["cname"];
+    $csex=$_GET["csex"];
+    $cbirthday=$_GET["cbirthday"];
+    $cmail=$_GET["cmail"];
+    $ctel=$_GET["ctel"];
+    $caddr=$_GET["caddr"];
+    
+    $sql = "update students0311 set cname='$cname', csex='$csex', cbirthday='$cbirthday', cemail='$cmail', cphone='$ctel', caddr='$caddr' where cid='$cid'";
+    
+    $result = mysqli_query($conn, $sql);
+    
+}else{
+
+$cid=$_GET['id'];
+
+
+
+$sql = "SELECT * FROM students0311 where cid='".$cid."'";
+$result = mysqli_query($conn, $sql);
+
+//if (mysqli_num_rows($result) > 0) {
+    // output data of each row
+   $row = mysqli_fetch_assoc($result);
+include("bootstrap01.php");
+?>       
+  <h1>修改作業</h1>
+<form>
+座號：<?php echo $row["cID"]; ?><input type="hidden" name="cid" value="<?php echo $row["cID"]; ?>"><br>
+姓名：<input type="text" name="cname" value="<?php echo $row["cName"]; ?>"><br>
+性別：<input type="text" name="csex" value="<?php echo $row["cSex"]; ?>"><br>
+生日：<input type="text" name="cbirthday" value="<?php echo $row["cBirthday"]; ?>"><br>
+郵件：<input type="text" name="cmail" value="<?php echo $row["cEmail"]; ?>"><br>
+電話：<input type="text" name="ctel" value="<?php echo $row["cPhone"]; ?>"><br>
+地址：<input type="text" name="caddr" value="<?php echo $row["cAddr"]; ?>"><br>
+
+<input type="submit" name="update" value="更新">
+<input type="reset">    
+</form>     
+    
+<?php
+include("bootstrap02.php");
+}
+?>
+=====================================================================================
+<?php
+include("conndb.php");
+
+if (isset($_GET["update"])){
+    echo "更新";
+    $cid=$_GET["cid"];
+    $cname=$_GET["cname"];
+    $csex=$_GET["csex"];
+    $cbirthday=$_GET["cbirthday"];
+    $cmail=$_GET["cmail"];
+    $ctel=$_GET["ctel"];
+    $caddr=$_GET["caddr"];
+    
+    $sql = "update students0311 set cname='$cname', csex='$csex', cbirthday='$cbirthday', cemail='$cmail', cphone='$ctel', caddr='$caddr' where cid='$cid'";
+    
+    $result = mysqli_query($conn, $sql);
+    
+    header('Location: dbtestb.php'); //<<<<<<<<<<<<<<<<<<<<
+}else{
+
+$cid=$_GET['id'];
+
+
+
+$sql = "SELECT * FROM students0311 where cid='".$cid."'";
+$result = mysqli_query($conn, $sql);
+
+//if (mysqli_num_rows($result) > 0) {
+    // output data of each row
+   $row = mysqli_fetch_assoc($result);
+include("bootstrap01.php");
+?>       
+  <h1>修改作業</h1>
+<form>
+座號：<?php echo $row["cID"]; ?><input type="hidden" name="cid" value="<?php echo $row["cID"]; ?>"><br>
+姓名：<input type="text" name="cname" value="<?php echo $row["cName"]; ?>"><br>
+性別：<input type="text" name="csex" value="<?php echo $row["cSex"]; ?>"><br>
+生日：<input type="text" name="cbirthday" value="<?php echo $row["cBirthday"]; ?>"><br>
+郵件：<input type="text" name="cmail" value="<?php echo $row["cEmail"]; ?>"><br>
+電話：<input type="text" name="ctel" value="<?php echo $row["cPhone"]; ?>"><br>
+地址：<input type="text" name="caddr" value="<?php echo $row["cAddr"]; ?>"><br>
+
+<input type="submit" name="update" value="更新">
+<input type="reset">    
+</form>     
+    
+<?php
+include("bootstrap02.php");
+}
+?>
+===========================================================
+delete.php
+============================================================
+<?php
+include("conndb.php");
+
+//if (isset($_GET["update"])){
+//    echo "更新";
+//    $cid=$_GET["cid"];
+//    $cname=$_GET["cname"];
+//    $csex=$_GET["csex"];
+//    $cbirthday=$_GET["cbirthday"];
+//    $cmail=$_GET["cmail"];
+//    $ctel=$_GET["ctel"];
+//    $caddr=$_GET["caddr"];
+//    
+//    $sql = "update students0311 set cname='$cname', csex='$csex', cbirthday='$cbirthday', cemail='$cmail', cphone='$ctel', caddr='$caddr' where cid='$cid'";
+//    
+//    $result = mysqli_query($conn, $sql);
+//    
+//    header('Location: dbtestb.php');
+//}else{
+
+$cid=$_GET['cid'];
+
+
+
+$sql = "SELECT * FROM students0311 where cid='".$cid."'";
+$result = mysqli_query($conn, $sql);
+
+//if (mysqli_num_rows($result) > 0) {
+    // output data of each row
+   $row = mysqli_fetch_assoc($result);
+include("bootstrap01.php");
+?>       
+  <h1>您確定要刪除嗎?</h1>
+<form>
+座號：<?php echo $row["cID"]; ?><input type="hidden" name="cid" value="<?php echo $row["cID"]; ?>"><br>
+姓名：<?php echo $row["cName"]; ?><br>
+性別：<?php echo $row["cSex"]; ?><br>
+生日：<?php echo $row["cBirthday"]; ?><br>
+郵件：<?php echo $row["cEmail"]; ?><br>
+電話：<?php echo $row["cPhone"]; ?><br>
+地址：<?php echo $row["cAddr"]; ?><br>
+
+<input type="submit" name="delete" value="確認刪除">
+<a href="dbtestb.php" class="btn btn-primary">取消刪除</a>   
+</form>     
+    
+<?php
+include("bootstrap02.php");
+//}
+?>
+=========================================================================
+delete.php
+=========================================================================
+<?php
+include("conndb.php");
+
+if (isset($_GET["delete"])){
+    
+    $cid=$_GET["cid"];
+        
+    $sql = "delete from students0311 where cid='$cid'";
+    
+    $result = mysqli_query($conn, $sql);
+    
+    header('Location: dbtestb.php');
+}else{
+
+$cid=$_GET['cid'];
+
+
+
+$sql = "SELECT * FROM students0311 where cid='".$cid."'";
+$result = mysqli_query($conn, $sql);
+
+//if (mysqli_num_rows($result) > 0) {
+    // output data of each row
+   $row = mysqli_fetch_assoc($result);
+include("bootstrap01.php");
+?>       
+  <h1>您確定要刪除嗎?</h1>
+<form>
+座號：<?php echo $row["cID"]; ?><input type="hidden" name="cid" value="<?php echo $row["cID"]; ?>"><br>
+姓名：<?php echo $row["cName"]; ?><br>
+性別：<?php echo $row["cSex"]; ?><br>
+生日：<?php echo $row["cBirthday"]; ?><br>
+郵件：<?php echo $row["cEmail"]; ?><br>
+電話：<?php echo $row["cPhone"]; ?><br>
+地址：<?php echo $row["cAddr"]; ?><br><br>
+
+<input type="submit" class="btn btn-danger" name="delete" value="確認刪除">
+<a href="dbtestb.php" class="btn btn-primary">取消刪除</a>   
+</form>     
+    
+<?php
+include("bootstrap02.php");
+}
+?>
+====================================================================================
+
+<?php
+include("bootstrap01.php");
+header("Content-Type:text/html; charset=utf-8");
+
+include("conndb.php");
+
+if (isset($_GET['sl']))
+    $sl=$_GET['sl'];
+else
+    $sl=0; //目前頁次
+
+$pn=3; //每頁出現筆數
+
+$sql = "SELECT count(*) as c FROM students0311";
+$result = mysqli_query($conn, $sql);
+$row = mysqli_fetch_assoc($result);
+$tl=floor($row["c"]/$pn);   //$tl總頁數
+if ($row["c"]%$pn!=0) $tl=$tl+1;
+
+$sr=$sl*$pn; //開始筆數
+    
+$sql = "SELECT * FROM students0311 limit $sr, $pn";
+$result = mysqli_query($conn, $sql);
+
+if (mysqli_num_rows($result) > 0) {
+    // output data of each row
+    echo "<h1 class='text-center'>學生資料<a class='btn btn-primary btn-sm' href='insert.php'>新增</a></h1>";
+    echo "<table class='table table-bordered'>";
+    echo "<tr>";
+    echo "<td>座號</td><td>姓名</td><td>性別</td><td>電話</td>";
+    echo "</tr>";
+    
+    while($row = mysqli_fetch_assoc($result)) {
+        echo "<tr class='success'>";
+        echo "<td><a href='update.php?id=" . $row["cID"]. "'>".$row["cID"]."</a> <a href='delete.php?cid=".$row["cID"]."' class='btn btn-danger btn-sm'>刪除</a></td><td>" . $row["cName"]. "</td><td>".$row["cSex"]."</td><td>".$row["cPhone"]."</td>";
+        echo "</tr>";
+    }
+    echo "</table>";
+    if ($sl!=0)
+      echo "<a href='dbtestb.php?sl=0' class='btn btn-primary'>第一頁</a>";
+    if ($sl>0)
+      echo "<a href='dbtestb.php?sl=".($sl-1)."' class='btn btn-primary'>前一頁</a>";
+    if ($sl<$tl-1)  
+      echo "<a href='dbtestb.php?sl=".($sl+1)."' class='btn btn-primary'>後一頁</a>";
+    if ($sl!=$tl-1)
+      echo "<a href='dbtestb.php?sl=".($tl-1)."' class='btn btn-primary'>最後頁</a>";
+        
+} else {
+    echo "0 results";
+}
+
+mysqli_close($conn);
+include("bootstrap02.php");
+?>
+ ==============================================================================

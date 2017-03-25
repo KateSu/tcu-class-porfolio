@@ -1,0 +1,448 @@
+<?php
+ header("Content-Type:text/html; charset=utf-8");
+
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "db0311";
+
+
+
+// Create connection
+$conn = mysqli_connect($servername, $username, $password, $dbname);
+
+// Check connection
+if (!$conn) {
+    die("連線失敗: " . mysqli_connect_error());
+}
+echo "連線成功<br>";
+
+mysql_query("SET NAMES utf8");
+
+$sql = "SELECT * FROM students0311 where csex='M' limit 2,2";
+$result = mysqli_query($conn, $sql);
+
+if (mysqli_num_rows($result) > 0) {
+    // output data of each row
+    echo "<table border='1'>";
+    echo "<tr>";
+    echo "<td>座號</td><td>姓名</td><td>性別</td>";
+    echo "</tr>";
+    
+    while($row = mysqli_fetch_assoc($result)) {
+        echo "<tr>";
+        echo "<td>" . $row["cID"]. "</td><td>" . $row["cName"]. "</td><td>".$row["cSex"]."</td>";
+        echo "</tr>";
+    }
+    echo "</table>";
+} else {
+    echo "0 results";
+}
+
+mysqli_close($conn);
+?>
+
+=======================================================================================
+Bootstrap01.php
+==============================================
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap 101 Template</title>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+
+    <!-- HTML5 shim and Respond.js 讓 IE8 支援 HTML5 元素與媒體查詢 -->
+    <!-- 警告：Respond.js 無法在 file:// 協定下運作 -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap 101 Template</title>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+
+    <!-- HTML5 shim and Respond.js 讓 IE8 支援 HTML5 元素與媒體查詢 -->
+    <!-- 警告：Respond.js 無法在 file:// 協定下運作 -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+<?php
+ header("Content-Type:text/html; charset=utf-8");
+
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "db0311";
+
+
+
+// Create connection
+$conn = mysqli_connect($servername, $username, $password, $dbname);
+
+// Check connection
+if (!$conn) {
+    die("連線失敗: " . mysqli_connect_error());
+}
+echo "連線成功<br>";
+
+mysql_query("SET NAMES utf8");
+
+$sql = "SELECT * FROM students0311";
+$result = mysqli_query($conn, $sql);
+
+if (mysqli_num_rows($result) > 0) {
+    // output data of each row
+    echo "<table class='table table-striped'>";
+    echo "<tr>";
+    echo "<td>座號</td><td>姓名</td><td>性別</td>";
+    echo "</tr>";
+    
+    while($row = mysqli_fetch_assoc($result)) {
+        echo "<tr>";
+        echo "<td>" . $row["cID"]. "</td><td>" . $row["cName"]. "</td><td>".$row["cSex"]."</td>";
+        echo "</tr>";
+    }
+    echo "</table>";
+} else {
+    echo "0 results";
+}
+
+mysqli_close($conn);
+?>
+      
+<!-- jQuery (Bootstrap 所有外掛均需要使用) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <!-- 依需要參考已編譯外掛版本（如下），或各自獨立的外掛版本 -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+  </body>
+</html>      
+============================================================
+bootstrap02.php
+=========================================
+<!-- jQuery (Bootstrap 所有外掛均需要使用) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <!-- 依需要參考已編譯外掛版本（如下），或各自獨立的外掛版本 -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+  </body>
+</html>    
+============================================================
+
+
+<?php
+include("bootstrap01.php");
+header("Content-Type:text/html; charset=utf-8");
+
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "db0311";
+
+
+
+// Create connection
+$conn = mysqli_connect($servername, $username, $password, $dbname);
+
+// Check connection
+if (!$conn) {
+    die("連線失敗: " . mysqli_connect_error());
+}
+echo "連線成功<br>";
+
+mysql_query("SET NAMES utf8");
+
+$sql = "SELECT * FROM students0311";
+$result = mysqli_query($conn, $sql);
+
+if (mysqli_num_rows($result) > 0) {
+    // output data of each row
+    echo "<table class='table table-bordered'>";
+    echo "<tr>";
+    echo "<td>座號</td><td>姓名</td><td>性別</td>";
+    echo "</tr>";
+    
+    while($row = mysqli_fetch_assoc($result)) {
+        echo "<tr class='success'>";
+        echo "<td>" . $row["cID"]. "</td><td>" . $row["cName"]. "</td><td>".$row["cSex"]."</td>";
+        echo "</tr>";
+    }
+    echo "</table>";
+} else {
+    echo "0 results";
+}
+
+mysqli_close($conn);
+include("bootstrap02.php");
+?>
+ 
+ ================================================================
+ 
+ insert into students0311(cName,cSex,cBirthday,cEmail,cPhone,cAddr) VALUES('張三豐', 'M', '2000-01-01','abc@gmail.com','098888888','台北市中山區中山路1號')
+ 
+ ==================================================================
+ 
+ <h1>新增作業</h1>
+<form>
+姓名：<input type="text" name="cname"><br>
+性別：<input type="text" name="csex"><br>
+生日：<input type="text" name="cbirthday"><br>
+郵件：<input type="text" name="cmail"><br>
+電話：<input type="text" name="ctel"><br>
+地址：<input type="text" name="caddr"><br>
+
+<input type="submit">
+<input type="reset">    
+</form>
+======================================================================
+<?php
+if (isset($_GET['submit'])){
+    $cname=$_GET['cname'];
+    $csex=$_GET['csex'];
+    $cbirthday=$_GET['cbirthday'];
+    $cmail=$_GET['cmail'];
+    $ctel=$_GET['ctel'];
+    $caddr=$_GET['caddr'];
+    $sql="insert into students0311 (cName,cSex,cBirthday,cEmail,cPhone,cAddr) VALUES(";
+    $sql.="'".$cname."',";
+    $sql.="'".$csex."',";
+    $sql.="'".$cbirthday."',";
+    $sql.="'".$cmail."',";
+    $sql.="'".$ctel."',";
+    $sql.="'".$caddr."')";
+    
+    echo $sql;
+    
+}
+}
+?>
+<h1>新增作業</h1>
+<form>
+姓名：<input type="text" name="cname"><br>
+性別：<input type="text" name="csex"><br>
+生日：<input type="text" name="cbirthday"><br>
+郵件：<input type="text" name="cmail"><br>
+電話：<input type="text" name="ctel"><br>
+地址：<input type="text" name="caddr"><br>
+
+<input type="submit" name="submit">
+<input type="reset">    
+</form>
+============================================================================
+
+<?php
+if (isset($_GET['submit'])){
+    $cname=$_GET['cname'];
+    $csex=$_GET['csex'];
+    $cbirthday=$_GET['cbirthday'];
+    $cmail=$_GET['cmail'];
+    $ctel=$_GET['ctel'];
+    $caddr=$_GET['caddr'];
+    
+    $sql="insert into students0311 (cName,cSex,cBirthday,cEmail,cPhone,cAddr) VALUES(";
+    $sql.="'".$cname."',";
+    $sql.="'".$csex."',";
+    $sql.="'".$cbirthday."',";
+    $sql.="'".$cmail."',";
+    $sql.="'".$ctel."',";
+    $sql.="'".$caddr."')";
+    
+//    echo $sql;
+    
+    $servername = "localhost";
+    $username = "root";
+    $password = "";
+    $dbname = "db0311";
+
+// Create connection
+    $conn = mysqli_connect($servername, $username, $password, $dbname);
+
+// Check connection
+   if (!$conn) {
+      die("連線失敗: " . mysqli_connect_error());
+   }
+//      echo "連線成功<br>";
+    
+    if (mysqli_query($conn, $sql)) {
+      echo "新增成功";
+    } else {
+      echo "新增錯誤: " . $sql . "<br>" . mysqli_error($conn);
+}
+}
+?>
+<h1>新增作業</h1>
+<form>
+姓名：<input type="text" name="cname"><br>
+性別：<input type="text" name="csex"><br>
+生日：<input type="text" name="cbirthday"><br>
+郵件：<input type="text" name="cmail"><br>
+電話：<input type="text" name="ctel"><br>
+地址：<input type="text" name="caddr"><br>
+
+<input type="submit" name="submit">
+<input type="reset">    
+</form>
+
+====================================================================================
+
+
+<?php
+include("bootstrap01.php");
+header("Content-Type:text/html; charset=utf-8");
+
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "db0311";
+
+
+
+// Create connection
+$conn = mysqli_connect($servername, $username, $password, $dbname);
+
+// Check connection
+if (!$conn) {
+    die("連線失敗: " . mysqli_connect_error());
+}
+//echo "連線成功<br>";
+
+mysql_query("SET NAMES utf8");
+
+$sql = "SELECT * FROM students0311";
+$result = mysqli_query($conn, $sql);
+
+if (mysqli_num_rows($result) > 0) {
+    // output data of each row
+    echo "<h1>學生資料<a class='btn btn-primary btn-sm' href='insert.php'>新增</a></h1>";
+    echo "<table class='table table-bordered'>";
+    echo "<tr>";
+    echo "<td>座號</td><td>姓名</td><td>性別</td>";
+    echo "</tr>";
+    
+    while($row = mysqli_fetch_assoc($result)) {
+        echo "<tr class='success'>";
+        echo "<td>" . $row["cID"]. "</td><td>" . $row["cName"]. "</td><td>".$row["cSex"]."</td>";
+        echo "</tr>";
+    }
+    echo "</table>";
+} else {
+    echo "0 results";
+}
+
+mysqli_close($conn);
+include("bootstrap02.php");
+?>
+ 
+ =======================================================================================
+ 
+ 
+<?php
+include("bootstrap01.php");
+header("Content-Type:text/html; charset=utf-8");
+
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "db0311";
+
+
+
+// Create connection
+$conn = mysqli_connect($servername, $username, $password, $dbname);
+
+// Check connection
+if (!$conn) {
+    die("連線失敗: " . mysqli_connect_error());
+}
+//echo "連線成功<br>";
+
+mysql_query("SET NAMES utf8");
+
+$sql = "SELECT * FROM students0311";
+$result = mysqli_query($conn, $sql);
+
+if (mysqli_num_rows($result) > 0) {
+    // output data of each row
+    echo "<h1 class='text-center'>學生資料<a class='btn btn-primary btn-sm' href='insert.php'>新增</a></h1>";
+    echo "<table class='table table-bordered'>";
+    echo "<tr>";
+    echo "<td>座號</td><td>姓名</td><td>性別</td>";
+    echo "</tr>";
+    
+    while($row = mysqli_fetch_assoc($result)) {
+        echo "<tr class='success'>";
+        echo "<td><a href='update.php?id=" . $row["cID"]. "'>".$row["cID"]."</a></td><td>" . $row["cName"]. "</td><td>".$row["cSex"]."</td>";
+        echo "</tr>";
+    }
+    echo "</table>";
+} else {
+    echo "0 results";
+}
+
+mysqli_close($conn);
+include("bootstrap02.php");
+?>
+ 
+ =================================================================================
+ update.php
+ ====================================================================================
+ <?php
+$cid=$_GET['id'];
+
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "db0311";
+
+
+
+// Create connection
+$conn = mysqli_connect($servername, $username, $password, $dbname);
+
+// Check connection
+if (!$conn) {
+    die("連線失敗: " . mysqli_connect_error());
+}
+//echo "連線成功<br>";
+
+mysql_query("SET NAMES utf8");
+
+$sql = "SELECT * FROM students0311 where cid='".$cid."'";
+$result = mysqli_query($conn, $sql);
+
+//if (mysqli_num_rows($result) > 0) {
+    // output data of each row
+   $row = mysqli_fetch_assoc($result);
+?>       
+  <h1>新增作業</h1>
+<form>
+姓名：<input type="text" name="cname" value="<?php echo $row["cName"]; ?>"><br>
+性別：<input type="text" name="csex" value="<?php echo $row["cSex"]; ?>"><br>
+生日：<input type="text" name="cbirthday" value="<?php echo $row["cBirthday"]; ?>"><br>
+郵件：<input type="text" name="cmail" value="<?php echo $row["cEmail"]; ?>"><br>
+電話：<input type="text" name="ctel" value="<?php echo $row["cPhone"]; ?>"><br>
+地址：<input type="text" name="caddr" value="<?php echo $row["cAddr"]; ?>"><br>
+
+<input type="submit" name="submit">
+<input type="reset">    
+</form>     
+    
+
+?>
+
+=======================================================================================
